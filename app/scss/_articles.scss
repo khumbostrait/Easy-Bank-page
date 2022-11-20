@@ -1,0 +1,52 @@
+.article {
+  text-align: center;
+  @include breakpoints-up(medium) {
+    text-align: left;
+  }
+  background-color: $VeryLighGray;
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.875rem;
+    @include breakpoints-up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include breakpoints-up(large) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  &__content {
+    font-weight: 300;
+    color: $darkblue;
+  }
+  &__column {
+    padding: 0.3975rem;
+    border-radius: 5px;
+    overflow: hidden;
+    @include breakpoints-up(medium) {
+      flex: 1 0 50%;
+    }
+  }
+  &__image {
+    height: 12.5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  &__text {
+    padding: 1.5rem;
+  }
+  &__tittle {
+    color: $darkblue;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    @include breakpoints-up(large) {
+      font-size: 1.1rem;
+      margin-bottom: 2.125rem;
+    }
+  }
+  &__description {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+}

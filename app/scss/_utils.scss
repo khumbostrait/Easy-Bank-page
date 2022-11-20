@@ -1,0 +1,45 @@
+// primary color
+$darkblue: hsl(233, 26%, 24%);
+$LimeGreen: hsl(136, 65%, 51%);
+$BrightCyan: hsl(192, 70%, 51%);
+
+// // neautral color
+$GrayishBlue: hwb(233 59% 35%);
+$LightGrayishBlue: hsl(220, 16%, 96%);
+$VeryLighGray: hsl(0, 0%, 98%);
+$White: hsl(0, 0%, 100%);
+
+// mixins
+@media (min-width: 64em) {
+  // styles go here
+}
+
+// break points map
+
+// break points used  x large1400px,  large 1024px, mediaum640px
+$breakpoints-up: (
+  "medium": "40rem",
+  "large": "64rem",
+  "x-large": "85.5rem",
+);
+
+// break points small 639px  medium1023px  large1399px
+$breakpoints-down: (
+  "small": "37.9375rem",
+  "medium": "63.9375rem",
+  "large": "87.4375rem",
+);
+
+// break points mixins
+@mixin breakpoints-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+// break points down
+@mixin breakpoints-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
