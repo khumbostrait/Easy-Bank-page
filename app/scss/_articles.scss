@@ -1,5 +1,6 @@
 .article {
   text-align: center;
+  background-color: white;
   @include breakpoints-up(medium) {
     text-align: left;
   }
@@ -7,6 +8,7 @@
   &__row {
     display: grid;
     grid-template-columns: 1fr;
+    transition: 220ms ease-in-out;
     gap: 1.875rem;
     @include breakpoints-up(medium) {
       grid-template-columns: repeat(2, 1fr);
@@ -21,10 +23,15 @@
   }
   &__column {
     padding: 0.3975rem;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
+    transition: 300ms ease-in-out;
+    box-shadow: 0px 0.1875rem 0.25rem rgba(0, 0, 0, 0.15);
     overflow: hidden;
     @include breakpoints-up(medium) {
       flex: 1 0 50%;
+    }
+    &:hover {
+      transform: scale(1.07);
     }
   }
   &__image {
@@ -48,5 +55,11 @@
   &__description {
     font-size: 0.875rem;
     line-height: 1.5;
+    color: $darkblue;
+    background-color: white;
+  }
+  &__author {
+    color: $darkblue;
+    font-size: 0.75rem;
   }
 }
