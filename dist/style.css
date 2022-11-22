@@ -458,4 +458,72 @@ nav .nav__links a:hover::before {
 .article__author {
   color: hsl(233deg, 26%, 24%);
   font-size: 0.75rem;
+}
+
+.footer {
+  background-color: hsl(233deg, 26%, 24%);
+  color: white;
+  padding: 2.5rem;
+  text-align: center;
+}
+@media (min-width: 64rem) {
+  .footer {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(1fr, 3fr) 2fr;
+    grid-template-rows: repeat(2fr, 1fr);
+    grid-template-areas: "logo links1 links2 cta" " social links1 links2 cta";
+  }
+}
+.footer a {
+  color: white;
+}
+.footer__logo {
+  margin-bottom: 1.875rem;
+}
+@media (min-width: 64rem) {
+  .footer__logo {
+    grid-area: logo;
+  }
+}
+.footer__social {
+  margin-bottom: 1.875rem;
+}
+@media (min-width: 64rem) {
+  .footer__social {
+    grid-area: social;
+  }
+}
+.footer__social a {
+  display: inline-block;
+}
+.footer__social a:not(:last-child) {
+  margin-right: 1rem;
+}
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 2.25;
+}
+@media (min-width: 64rem) {
+  .footer__links.col-1 {
+    grid-area: links1;
+  }
+}
+.footer__links.col-2 {
+  margin-bottom: 1.875rem;
+}
+@media (min-width: 64rem) {
+  .footer__links.col-2 {
+    grid-area: links2;
+  }
+}
+@media (min-width: 64rem) {
+  .footer__cta {
+    grid-area: cta;
+  }
+}
+.footer__cta .button {
+  margin-bottom: 1.875rem;
 }/*# sourceMappingURL=style.css.map */
